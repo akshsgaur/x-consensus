@@ -65,7 +65,8 @@ export default function Home() {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 180000) // 3 minute timeout
       
-      const response = await fetch('http://localhost:8000/api/analyze-thread', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const response = await fetch(`${apiUrl}/api/analyze-thread`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -215,7 +216,7 @@ export default function Home() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-black focus:ring-0 disabled:opacity-50"
+                className="w-full bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-black focus:ring-0 disabled:opacity-50 transition-all duration-300 ease-in-out hover:rotate-1 hover:scale-102"
                 style={{
                   border: "3px solid #000000",
                   boxShadow: loading ? "3px 3px 0px #666666" : "6px 6px 0px #666666",
@@ -238,18 +239,6 @@ export default function Home() {
                 </div>
               )}
 
-              {/* Demo Button */}
-              <Button
-                type="button"
-                onClick={handleDemo}
-                className="bg-white text-black px-6 py-3 text-base font-medium hover:bg-white focus:ring-0"
-                style={{
-                  border: "3px solid #000000",
-                  boxShadow: "4px 4px 0px #666666",
-                }}
-              >
-                Try Demo: Tesla FSD Debate
-              </Button>
             </div>
           </form>
 
