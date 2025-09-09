@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Read(//var/folders/dt/9vrrtsxx2xg2yy1wv0nck0dw0000gn/T/TemporaryItems/NSIRD_screencaptureui_m1qJp6/**)",
+      "Bash(chmod:*)",
+      "WebSearch",
+      "Read(//var/folders/dt/9vrrtsxx2xg2yy1wv0nck0dw0000gn/T/TemporaryItems/NSIRD_screencaptureui_nzQp7S/**)",
+      "Read(//var/folders/dt/9vrrtsxx2xg2yy1wv0nck0dw0000gn/T/TemporaryItems/NSIRD_screencaptureui_ynp6Ci/**)",
+      "Read(//var/folders/dt/9vrrtsxx2xg2yy1wv0nck0dw0000gn/T/TemporaryItems/NSIRD_screencaptureui_6VbXab/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
