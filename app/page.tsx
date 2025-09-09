@@ -90,7 +90,7 @@ export default function Home() {
       }
     } catch (err) {
       clearInterval(progressInterval)
-      if (err.name === 'AbortError') {
+      if (err instanceof Error && err.name === 'AbortError') {
         setError('Request timed out. The analysis is taking longer than expected due to Twitter rate limiting. This is normal - please try again in a few minutes.')
       } else {
         setError('Failed to connect to analysis service')
