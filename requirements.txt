@@ -1,4 +1,4 @@
 httpx==0.25.0
-pydantic==2.5.0
+pydantic>=2.5.3
 python-dotenv==1.0.0
 xai-sdk>=0.1.0
