@@ -16,6 +16,27 @@ const nextConfig = {
   // Environment variables that should be available on the client side
   env: {
     CUSTOM_KEY: 'my-value',
+  },
+  
+  // Webpack optimizations for Vercel deployment
+  webpack: (config, { isServer }) => {
+    // Reduce memory usage during builds
+    config.optimization = {
+      ...config.optimization,
+      minimize: true,
+    }
+    
+    // Optimize for serverless deployment
+    if (isServer) {
+      config.externals = [...(config.externals || []), 'canvas', 'jsdom']
+    }
+    
+    return config
+  },
+  
+  // Reduce bundle size
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons']
   }
 }
 
