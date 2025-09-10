@@ -387,7 +387,7 @@ export default function Home() {
               
               <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {/* Live Search Results */}
-                {consensusData.live_search_results && consensusData.live_search_results.length > 0 && (
+                {(consensusData.live_search_results?.length ?? 0) > 0 && (
                   <div
                     className="p-6"
                     style={{
