@@ -400,7 +400,7 @@ export default function Home() {
                       🔍 Live Search Results
                     </h4>
                     <div className="space-y-3">
-                      {consensusData.live_search_results.map((result, index) => (
+                      {(consensusData.live_search_results ?? []).map((result, index) => (
                         <div key={index} className="border-l-4 border-blue-500 pl-4">
                           <a
                             href={result.url}
