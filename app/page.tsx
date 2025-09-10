@@ -379,7 +379,7 @@ export default function Home() {
           </div>
           
           {/* Enhanced Data Section */}
-          {(consensusData.live_search_results?.length > 0 || consensusData.processing_time) && (
+          {((consensusData.live_search_results?.length ?? 0) > 0 || consensusData.processing_time) && (
             <div className="mt-12 space-y-6">
               <h3 className="text-xl font-bold text-center" style={{ color: "#000000" }}>
                 ✨ Enhanced Analysis Data
