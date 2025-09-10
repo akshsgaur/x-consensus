@@ -65,7 +65,7 @@ export default function Home() {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 180000) // 3 minute timeout
       
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.origin) || 'http://localhost:8000'
       const response = await fetch(`${apiUrl}/api/analyze-thread`, {
         method: 'POST',
         headers: {
